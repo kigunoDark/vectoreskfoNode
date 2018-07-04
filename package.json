@@ -1,0 +1,27 @@
+{
+  "name": "checkout",
+  "version": "1.0.0",
+  "description": "myProject",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "foxbuka",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "mongodb": "^3.1.0",
+    "mongoose": "^5.2.1",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "session": "^0.1.0",
+    "validator": "^10.4.0"
+  }
+}
