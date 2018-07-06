@@ -22,7 +22,7 @@ var app = express();
 
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'landing'}));
+app.engine('handlebars', exphbs({defaultLayout:'layout'}));
 app.set('view engine', 'handlebars');
 
 // BodyParser Middleware
@@ -83,5 +83,5 @@ app.use('/users', users);
 app.set('port', (process.env.PORT || 3000));
 
 app.listen(app.get('port'), function(){
-	console.log('Server started on port '+app.get('port'));
+  console.log('Server started on port '+app.get('port'));
 });
