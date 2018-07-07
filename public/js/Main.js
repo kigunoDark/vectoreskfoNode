@@ -1,5 +1,3 @@
-
-
 const APP_ID = "6H6LGbdU8moRIx2Cmc7M";
 const APP_CODE = "d712it9OF2kVHCy7FbQKCw";
 
@@ -33,18 +31,34 @@ let ui = H.ui.UI.createDefault(map, defaultLayers, "ru-RU");
 
 eventMarkerGroup = new H.map.Group();
 map.addObject(eventMarkerGroup);
-let eventMarkerDict = {};
-
+let eventMarkerDict = {'Хакатон': ['Ну тип хакатон', 
+                                    new H.map.Marker({lat: 45.04882851375588, lng: 41.983690893254135})]
+};
+console.log(eventMarkerDict);
 var eventCoords = null;
 var selectedMarker = null;
 map.addEventListener('tap', function(evt) {
     eventCoords =  map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
     var target = evt.target;
     if (target instanceof mapsjs.map.Marker) {
-        selectedMarker = target.label;
-        let eventMarkerWindowTitle = document.querySelector('h5#eventMarkerTitle');
-        eventMarkerWindowTitle.innerText = selectedMarker;
-        $('#eventMarkerWindow').modal();
+        if (target.label == undefined) {
+            for (var key in eventMarkerDict) {
+                if (target.getPosition() == eventMarkerDict[key][1].getPosition()) {
+                    let eventMarkerWindowTitle = document.querySelector('h5#eventMarkerTitle');
+                    let eventMarkerWindowDesc = document.querySelector('span#description');
+                    eventMarkerWindowDesc.innerText = eventMarkerDict[key][0];
+                    eventMarkerWindowTitle.innerText = key;
+                    $('#eventMarkerWindow').modal();
+                }
+            }
+        } else {
+            selectedMarker = target.label;
+            let eventMarkerWindowTitle = document.querySelector('h5#eventMarkerTitle');
+            let eventMarkerWindowDesc = document.querySelector('span#description');
+            eventMarkerWindowDesc.innerText = eventMarkerDict[selectedMarker][0];
+            eventMarkerWindowTitle.innerText = selectedMarker;
+            $('#eventMarkerWindow').modal();
+        }
     } else {
         $('#eventWindow').modal();
     }
@@ -55,7 +69,9 @@ function saveBtn() {
     marker = new H.map.Marker(eventCoords);
     marker.label = document.getElementById("eventName").value;
     eventMarkerGroup.addObject(marker);
-    eventMarkerDict[marker.label] = marker;
+    eventMarkerDict[marker.label] = [document.getElementById("eventDesc").value, marker];
+    document.getElementById('eventForm').reset();
+    console.log(eventMarkerDict);
 }
 
 var searchVal = null;
@@ -145,8 +161,16 @@ function addLocationsToMap(locations){
 }
 
 function deleteMarkerBtn() {
-    eventMarkerGroup.removeObject(eventMarkerDict[selectedMarker]);
-    delete eventMarkerDict[selectedMarker];
-    console.log(eventMarkerDict);
-    $('#eventMarkerWindow').modal('hide');
+    if (selectedMarker == undefined) {
+
+    } else {
+        eventMarkerGroup.removeObject(eventMarkerDict[selectedMarker][1]);
+        delete eventMarkerDict[selectedMarker];
+        console.log(eventMarkerDict);
+        $('#eventMarkerWindow').modal('hide');
+    }
+}
+
+for (var key in eventMarkerDict) {
+    eventMarkerGroup.addObject(eventMarkerDict[key][1]);
 }
