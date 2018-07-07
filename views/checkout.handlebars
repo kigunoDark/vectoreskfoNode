@@ -1,0 +1,61 @@
+  <div class="wrapper">
+     
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+            </nav>
+                <div class="container-fluid" style="alignment:center; width: 90%; margin-bottom: 5px;">
+                    <input id = "searchInput" class="form-control" type="text" placeholder="Поиск" onchange="searchInput()">
+                    <input type="checkbox" id="eventSearch" name="eventSearch"
+                           value="eventSearch"  />
+                    <label for="eventSearch">Поиск по событиям</label>
+                </div>
+            <div id="map"></div>
+            <script src="/js/Main.js"></script>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- Event window -->
+    <div class="modal fade" id="eventWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventWindowTitle">Создание события</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+               
+                    <input type="text" class="form-control" name="eventName" placeholder="Название события" style="margin: 3px">
+                    <input type="text" class="form-control" name="eventDesc" placeholder="Описание события" style="margin: 3px">
+                    <input type="time" class="form-control" name="eventTime" style="margin: 3px">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-top: 8px; ">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="saveBtn()" style="margin-top: 8px;">Создать событие</button>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event marker window -->
+    <div class="modal fade" id="eventMarkerWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventMarkerTitle">Тут должно быть название события</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-top: 8px; ">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="deleteMarkerBtn()" style="margin-top: 8px;">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,3 +1,4 @@
+
 body{
 	margin: 0;
 	padding: 0;
@@ -8,7 +9,7 @@ body{
 	font-weight: 300;
 }
 
-#login-box{
+#register-box{
 	position: relative;
 	margin: 10% auto;
 	height: 400px;
@@ -17,7 +18,7 @@ body{
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.left-box
+.r-left-box
 {
 	position: absolute;
 	top: 0;
@@ -28,10 +29,10 @@ body{
 	height: 400px;
 }
 
-.sign{
+.r-sign{
 	margin: 0 0 20px 0;
 	font-weight: 300;
-	font-size: 28px;
+	font-size: 20px;
 }
 
 input[type="text"],
@@ -69,7 +70,7 @@ input[type="submit"]
 	padding: 10px;
 }
 
-.right-box
+.r-right-box
 {
 	position: absolute;
 	top: 0;
@@ -78,13 +79,13 @@ input[type="submit"]
 	padding: 40px;
 	width: 300px;
 	height: 400px;
-	background-image: url("../images/her.jpg");
+	background-color:rgba(159, 204, 114,0.6);
 	background-size: cover;
 	background-position: center;
 }
 
 
-.or{
+.r-or{
 	position: absolute;
 	top: 180px;
 	left: 280px;
@@ -99,18 +100,18 @@ input[type="submit"]
 	font-weight: 300;
 }
 
-.right-box .signinwith
+.r-right-box .signinwith
 {
 	display: block;
 	margin-bottom:40px;
-	font-size: 28px;
+	font-size: 20px;
 	color: #fff;
 	text-align: center;
-	text-shadow: 0 2px 4px rgba(0,0,0, 0.6)
+	text-shadow: 0 2px 4px rgba(0,0,0, 0.6);
 }
 
 button.social{
-	margin-bottom: 20px;
+
 	width: 220px;
 	height: 36px;
 	border:none;
@@ -120,7 +121,7 @@ button.social{
 	font-weight: 500;
 	transition: 0.2s ease;
 	cursor: pointer;
-
+	margin-top: 20px;
 }
 
 .facebook{
