@@ -54,6 +54,7 @@ input[type="password"]
 
 input[type="submit"]
 {
+	margin-left: 25px;
 	margin-bottom: 28px;
 	width: 160px;
 	height: 42px;
@@ -98,6 +99,7 @@ input[type="submit"]
 	color: white;
 	font-weight: 300;
 }
+
 
 .l-right-box .signinwith
 {

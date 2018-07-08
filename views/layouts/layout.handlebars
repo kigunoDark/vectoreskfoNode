@@ -13,7 +13,6 @@
 
     <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
-    
       <link rel="stylesheet" type="text/css" href="/css/main.css">
       <link rel="stylesheet" type="text/css" href="/css/register.css"> 
       <link rel="stylesheet" type="text/css" href="/css/style.css" > 
@@ -23,7 +22,7 @@
 
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -35,9 +34,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 
-  <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+  
 
 
     <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
@@ -63,16 +60,24 @@
         <nav >
           <ul>
             {{#if user}}
-     
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Профиль <span class="caret"></span></a>
+            <!--  <div class="container-fluid" style="alignment:center; width: 90%; margin-bottom: 5px;">
+            <input id = "searchInput" class="form-control" type="text" placeholder="Поиск" onchange="searchInput()"> -->
 
+            <div class="navbar-form navbar-left">
+        <input id="searchInput" type="text" class="form-control" onchange="searchInput()" placeholder="Поиск">
+      </div>
+
+                  
+             <li class="dropdown">
+          <a href="#"  id="down" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-money" aria-hidden="true"></i>  <span class="counter" > 1 </span> <span>      </span>Профиль <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Мой профиль</a></li>
-            <li><a href="#">Редактивровать</a></li>
             <li><a href="#">Настройки</a></li>
-            <li role="presentation"><a href="/users/logout">Выход</a></li>
+           <li><a href="/users/logout">Выход</a></li>  
+            
           </ul>
         </li>
+         
           <ul class="nav navbar-nav">      
            {{else}}
                  <li><a href="/#services" >О проекте</a></li>
@@ -104,9 +109,8 @@
 
 
         {{#if user}}
-            {{else}}
-             <div id="footer" class="footer">
-     <div class="container">
+          <div id="footer" class="footer" style="margin-top: 48%;">
+        <div class="container">
          <div class="row">
              <div class="col-lg-4 col-md-4">
                  <h4 class="wow fadeInUp">Наши контакты</h4>
@@ -121,12 +125,39 @@
                  <p><i class="fa fa-eye" aria-hidden="true"></i> Privacy</p>
              </div>
              <div class="col-lg-4 col-md-4">
-                 <i class="social fa fa-facebook" aria-hidden="true"></i>
-                 <i class="social fa fa-twitter" aria-hidden="true"></i>
-                <i class="social fa fa-linkedin" aria-hidden="true"></i>
-                <i class="social fa fa-pinterest" aria-hidden="true"></i>
-                <i class="social fa fa-youtube" aria-hidden="true"></i>
-                <i class="social fa fa-github" aria-hidden="true"></i><br>
+                <a href="#"><i class="social fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-youtube" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-github" aria-hidden="true"></i><br></a>
+             
+             </div>
+         </div>
+     </div> 
+            {{else}}
+        <div id="footer" class="footer">
+        <div class="container">
+         <div class="row">
+             <div class="col-lg-4 col-md-4">
+                 <h4 class="wow fadeInUp">Наши контакты</h4>
+                 <p><i class="fa fa-home" aria-hidden="true"></i> 111 Main Street, Washington DC, 22222</p>
+                 <p><i class="fa fa-envelope" aria-hidden="true"></i> krushennitskii@gmail.com</p>
+                 <p><i class="fa fa-phone" aria-hidden="true"></i> +79887059866 </p>
+                 <p><i class="fa fa-globe" aria-hidden="true"></i> www.foxbuka.com</p>
+             </div>
+             <div class="col-lg-4 col-md-4">
+                 <h4>О нас</h4>
+                 <p><i class="fa fa-users" aria-hidden="true"></i> About Us</p>
+                 <p><i class="fa fa-eye" aria-hidden="true"></i> Privacy</p>
+             </div>
+             <div class="col-lg-4 col-md-4">
+                <a href="#"><i class="social fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-youtube" aria-hidden="true"></i></a>
+                <a href="#"><i class="social fa fa-github" aria-hidden="true"></i><br></a>
              
              </div>
          </div>

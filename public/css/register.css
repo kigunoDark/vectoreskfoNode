@@ -55,7 +55,9 @@ input[type="password"]
 
 input[type="submit"]
 {
-	margin-bottom: 28px;
+	margin-top: 20px;
+	margin-left: 25px;
+	margin-bottom: 20px;
 	width: 160px;
 	height: 42px;
 	background: #6699cc;

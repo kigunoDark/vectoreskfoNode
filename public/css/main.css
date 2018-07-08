@@ -5,6 +5,9 @@ body{
 	margin: 0;
 	padding: 0;
 }
+#down{
+	text-decoration: none;
+}
 header{
 	position: absolute;
 	top:0;
@@ -405,6 +408,7 @@ input[type="password"]
 input[type="submit"]
 {
 	margin-bottom: 28px;
+
 	width: 160px;
 	height: 42px;
 	background: #6699cc;
