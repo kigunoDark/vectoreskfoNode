@@ -1,38 +1,36 @@
-	{{#if errors}}
-		{{#each errors}}
-			<div class="alert alert-danger">{{msg}}</div>
-		{{/each}}
-	{{/if}}
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
 
 
-	
-	<div id="register-box">
-			<div class="r-left-box">
-				<h1 class="r-sign"> Регистрация </h1>
 
-			<form method="post" action="/users/register">
+<div id="register-box">
+	<div class="r-left-box">
+		<h1 class="r-sign"> Регистрация </h1>
 
-				<input type="text" name="name" placeholder="Имя пользователя"/>
-				<input type="text" name="username" placeholder="Псевдоним"/>
-				<input type="text" name="email" placeholder="Email"/>
-				<input type="password" name="password" placeholder="Пароль"/>
-				<input type="password" name="rpassword" placeholder="Повторить пароль"/>
+		<form method="post" action="/users/register">
 
-				<input type="submit" name="signup-button" value="Войти "/>
-			</form>
+			<input type="text" name="name" placeholder="Имя пользователя" />
+			<input type="text" name="username" placeholder="Псевдоним" />
+			<input type="text" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Пароль" />
+			<input type="password" name="rpassword" placeholder="Повторить пароль" />
 
-			</div>
-			<div class="r-right-box">
-				<span class="signinwith">  Регистрация через <span>
+			<input type="submit" name="signup-button" value="Войти " />
+		</form>
+
+	</div>
+	<div class="r-right-box">
+		<span class="signinwith"> Регистрация через <span>
 				<button class="social facebook">Facebook</button>
 				<button class="social twitter"> Twitter</button>
-				<button class="social google">  Google+ </button>
-			</div>
-	
-			<div class="r-or">
-				<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-			</div>
-		</div>
+				<button class="social google"> Google+ </button>
 	</div>
 
-
+	<div class="r-or">
+		<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+	</div>
+</div>
+</div>
