@@ -1,83 +1,85 @@
- ce, you can copy & paste it in our own HTML.
+{{!-- ce, you can copy & paste it in our own HTML.
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-        <div class="wrapper">
-     
- 
-        <!-- Page Content  -->
-        <div id="content">
-            
-          
-            <div id="map"></div>
-            <script src="/js/Main.js"></script>
-        </div>
-    </div>
+            <div class="wrapper">
 
-    <div class="overlay"></div>
-    {{#if errors}}
-        {{#each errors}}
+
+                <!-- Page Content  -->
+                <div id="content">
+
+
+                    <div id="map"></div>
+                    <script src="/js/Main.js"></script>
+                </div>
+            </div>
+
+            <div class="overlay"></div>
+            {{#if errors}}
+            {{#each errors}}
             <div class="alert alert-danger">{{msg}}</div>
-        {{/each}}
-    {{/if}}
-    <!-- Event window -->
-    <div class="modal fade" id="eventWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="eventWindowTitle">Создание события</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            {{/each}}
+            {{/if}}
+            <!-- Event window -->
+            <div class="modal fade" id="eventWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="eventWindowTitle">Создание события</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <form id="eventForm" method="post" action="/users/checkout">
+
+                                <input onchange="turnOn()" type="text" class="form-control" id="eventName" name="eventName"
+                                    placeholder="Название события" style="margin: 3px">
+
+                                <input onchange="turnOn()" type="text" class="form-control" id="eventDesc" name="eventDesc"
+                                    placeholder="Описание события" style="margin: 3px">
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-top: 8px; ">Отмена</button>
+
+                                <button type="button" class="btn btn-primary" onclick="saveBtn()" style="margin-top: 8px;">Создать
+                                    событие</button>
+                            </form>
+
+
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
+            </div>
 
+            <!-- Event marker window -->
+            <div class="modal fade" id="eventMarkerWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="eventMarkerTitle">Тут должно быть название события</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <span id="description"> </span>
 
-               <form id = "eventForm" method="post" action="/users/checkout">
-
-                    <input onchange="turnOn()" type="text" class="form-control" id="eventName" name="eventName" placeholder="Название события" style="margin: 3px">
-
-                    <input onchange="turnOn()" type="text" class="form-control" id="eventDesc" name="eventDesc" placeholder="Описание события" style="margin: 3px">
-
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-top: 8px; ">Отмена</button>
-
-                    <button type="button" class="btn btn-primary" onclick="saveBtn()" style="margin-top: 8px;">Создать событие</button>
-                </form>
-
-
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-top: 8px; ">Отмена</button>
+                            <button type="button" class="btn btn-primary" onclick="deleteMarkerBtn()" style="margin-top: 8px;">Удалить</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Event marker window -->
-    <div class="modal fade" id="eventMarkerWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="eventMarkerTitle">Тут должно быть название события</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <span id="description"> </span>
-                    
-                </div>
-                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-top: 8px; ">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="deleteMarkerBtn()" style="margin-top: 8px;">Удалить</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    
 </div>
-
-
-
-  
+--}}
